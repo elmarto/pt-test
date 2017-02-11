@@ -1,0 +1,27 @@
+{
+  "name": "prot-api",
+  "version": "1.0.0",
+  "description": "Awesome API for Pro Translating Test",
+  "author": "Martin Sacco",
+  "license": "ISC",
+  "keywords": [
+    "pro",
+    "translating",
+    "api",
+    "test"
+  ],
+  "scripts": {
+    "test": "test",
+    "start": "DEBUG=express-sequelize nodemon ./bin/www localhost 8080"
+  },
+  "dependencies": {
+    "body-parser": "^1.16.0",
+    "express": "^4.14.0",
+    "mysql": "^2.13.0",
+    "sequelize": "^3.30.0",
+    "sequelize-cli": "^2.5.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}

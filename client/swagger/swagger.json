@@ -1,0 +1,309 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Pro Translating Test"
+  },
+  "host": "localhost:3000",
+  "basePath": "/api/v1",
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/clients": {
+      "get": {
+        "description": "Returns all clients including providers",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "All the clients."
+          }
+        }
+      },
+      "post": {
+        "description": "Create a new client.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Create client",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/client"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Created client object"
+          },
+          "400": {
+            "description": "Bad input"
+          }
+        }
+      }
+    },
+    "/clients/{id}" :{
+      "get": {
+        "description": "Returns a client by id",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "client id ",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "client object."
+          },
+          "400" : {
+            "description" : "client not Found"
+          }
+        }
+      },
+      "put": {
+        "description": "Edit a client.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "client id ",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Edit a client ",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/client"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Updated client"
+          },
+          "400": {
+            "description": "Bad input"
+          }
+        }
+      },
+      "delete" :{
+        "description": "Delete a client from the system based on id",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "client id ",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "client object."
+          },
+          "400" : {
+            "description" : "client not Found"
+          }
+        }
+      }
+    },
+    "/providers": {
+      "get": {
+        "description": "Returns all providers",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of providers."
+          }
+        }
+      },
+      "post": {
+        "description": "Create a new providers.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Create new client ",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/provider"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Created provider object"
+          },
+          "400": {
+            "description": "Bad input"
+          }
+        }
+      }
+    },
+    "/provider/{id}" :{
+      "get": {
+        "description": "Returns a provide by id",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "provider id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "provider object."
+          },
+          "400" : {
+            "description" : "provider not Found"
+          }
+        }
+      },
+      "put": {
+        "description": "Edit a provider",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "client id ",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Edit a client ",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/client"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Updated client object"
+          },
+          "400": {
+            "description": "Bad input"
+          }
+        }
+      },
+      "delete" :{
+        "description": "Delete a client from the system based on id",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "client id ",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "client object."
+          },
+          "400" : {
+            "description" : "client not Found"
+          }
+        }
+      }
+    }
+  },
+  "definitions" :{
+    "provider": {
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "provider 1"
+        }
+      }
+    },
+    "client": {
+      "required": [
+        "name",
+        "phone",
+        "email"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "client1"
+        },
+        "phone": {
+          "type": "string",
+          "example" : "12512512"
+        },
+        "email": {
+          "type": "email",
+          "example" : "client@email.com"
+        },
+        "providers" : {
+          "type" : "array",
+          "items": {
+            "type": "integer",
+            "example": 1
+          }
+        }
+      }
+    }
+  }
+}

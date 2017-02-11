@@ -1,0 +1,7 @@
+body {
+    font-family: 'Helvetica', 'Serif', 'Arial';
+}
+
+.dt .dt-cell {
+  line-height: 3 !important;
+}
