@@ -7,7 +7,7 @@ This repository demonstrates the usage of Sequelize within an Express app, and a
 1. Clone this repository.
 2. Setup a MySQL database (default name: `protranslating_test`)
 3. Configure in `api/config/config.json` your database access settings.
-4. From the API folder run these commands to populate and run the API:
+4. From the `/api` folder run these commands to populate and run the API:
 
   ```
   npm install
@@ -18,7 +18,7 @@ This repository demonstrates the usage of Sequelize within an Express app, and a
 
 ## Starting the client app
 
-1. Once you have running the API, run this commands:
+1. Once you have running the API, run this commands from the `/client` folder:
 
   ```
   npm install
@@ -35,3 +35,4 @@ This repository demonstrates the usage of Sequelize within an Express app, and a
   1. Testing
   2. Setup a Task Running tool for compiling, lints, preprocessors and more.
   3. Configure a dynamic Swagger.
+  4. List filters and sorting.
