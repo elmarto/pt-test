@@ -6,12 +6,8 @@
   },
   "host": "localhost:3000",
   "basePath": "/api/v1",
-  "schemes": [
-    "http"
-  ],
-  "consumes": [
-    "application/json"
-  ],
+  "schemes": [ "http" ],
+  "consumes": [ "application/json" ],
   "produces": [
     "application/json"
   ],
@@ -181,7 +177,7 @@
         }
       }
     },
-    "/provider/{id}" :{
+    "/providers/{id}" :{
       "get": {
         "description": "Returns a provide by id",
         "produces": [
@@ -217,17 +213,17 @@
           {
             "name": "id",
             "in": "path",
-            "description": "client id ",
+            "description": "Provider id",
             "required": true,
             "type": "string"
           },
           {
             "in": "body",
             "name": "body",
-            "description": "Edit a client ",
+            "description": "Edit a provider",
             "required": false,
             "schema": {
-              "$ref": "#/definitions/client"
+              "$ref": "#/definitions/provider"
             }
           }
         ],

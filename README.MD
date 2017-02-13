@@ -30,8 +30,8 @@ This repository demonstrates the usage of Sequelize within an Express app, and a
 
 
 
-## Some pending stuff
+## Some pending stuff...
 
   1. Testing
-  2. Setup a Task Running tool for compiling, lints and more.
+  2. Setup a Task Running tool for compiling, lints, preprocessors and more.
   3. Configure a dynamic Swagger.

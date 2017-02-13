@@ -29,9 +29,11 @@
          },
          controller: 'ClientEditController'
       }).then(function(newclient) {
-        $scope.clients = $scope.clients.map(function(client){
-          return (client.id === newclient.id) ? newclient : client;
-        });
+        if (newclient) {
+          $scope.clients = $scope.clients.map(function(client){
+            return (client.id === newclient.id) ? newclient : client;
+          });
+        }
       });
     };
 
@@ -46,8 +48,9 @@
          },
          controller: 'ClientCreateController'
       }).then(function(newclient) {
-        console.log(newclient);
-        $scope.clients.push(newclient);
+        if (newclient) {
+          $scope.clients.push(newclient);
+        }
       });
     };
 

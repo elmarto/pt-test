@@ -22,6 +22,18 @@ router.route('/')
 
 router.route('/:provider_id')
 
+  .put((req, res) => {
+    const data = req.body;
+    
+    models.provider
+      .findOne({ where: { id: req.params.provider_id }})
+      .then((provider) => provider.updateAttributes(data))
+      .then(() => {
+        res.statusCode = 203;
+        return res.json({ message: 'Provider edited successfully.' });
+      });
+  })
+
   .delete((req, res) => {
     models.provider.destroy({
       where: { id: req.params.provider_id }

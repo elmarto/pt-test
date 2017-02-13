@@ -11,7 +11,8 @@
 
   <table ng-if="$ctrl.providers.length">
     <tr ng-repeat="provider in $ctrl.providers">
-      <td><md-checkbox ng-model="provider.selected" >{{provider.name}}</md-checkbox></td>
+      <td><md-checkbox ng-model="provider.selected">{{provider.name}}</md-checkbox></td>
+      <td><md-button ng-click="$ctrl.editProvider(provider)">edit</md-button></td>
       <td><md-button ng-click="$ctrl.deleteProvider(provider.id)">delete</md-button></td>
     </tr>
   </table>

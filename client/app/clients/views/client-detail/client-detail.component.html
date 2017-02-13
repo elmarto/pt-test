@@ -2,7 +2,9 @@
   <md-dialog-content layout-padding>
     <form name="clientDetail">
       <div layout="row" layout-align="space-between top">
-        <div layout="column" layout-align="center center">
+        <div layout="column" layout-padding>
+          <strong>Client Information</strong>
+
           <md-input-container>
             <label>Name</label>
             <input type="text" ng-model="client.name" required md-maxlength="50">
@@ -29,6 +31,6 @@
   </md-dialog-content>
   <md-dialog-actions>
     <md-button ng-click="closeDialog()">Cancel</md-button>
-    <md-button ng-click="submit()" class="md-primary" ng-disabled="clientDetail.$invalid">{{actionLabel}}</md-button>
+    <md-button ng-click="submit()" class="md-accent" ng-disabled="clientDetail.$invalid">{{actionLabel}}</md-button>
   </md-dialog-actions>
 </md-dialog>

@@ -1,18 +1,20 @@
-<h1>List of Clients</h1>
+<div class="client-list">
+  <h1 class="title">Clients</h1>
 
-<dtable options="tableOptions" rows="clients" class="material">
-  <column name="Name"></column>
-  <column name="Email" width="300"></column>
-  <column name="Phone"></column>
-  <column name="Providers" width="300">
-    <span ng-repeat="provider in $cell">{{ provider.name }}</span>
-  </column>
-  <column width="300">
-    <md-button ng-click="openEditDialog($event, $row)">edit</md-button>
-    <md-button ng-click="deleteClient($row.id)">delete</md-button>
-  </column>
-</dtable>
+  <dtable options="tableOptions" rows="clients" class="material">
+    <column name="Name"></column>
+    <column name="Email" width="300"></column>
+    <column name="Phone"></column>
+    <column name="Providers" width="300">
+      <span ng-repeat="provider in $cell">{{ provider.name }} </span>
+    </column>
+    <column width="300">
+      <md-button ng-click="openEditDialog($event, $row)">edit</md-button>
+      <md-button ng-click="deleteClient($row.id)">delete</md-button>
+    </column>
+  </dtable>
 
-<div layout="row" layout-align="end top">
-  <md-button class="md-fab" aria-label="FAB" ng-click="openCreateDialog($event)">+</md-button>
+  <div layout="row" layout-align="end top">
+    <md-button id="float-button" class="md-fab" aria-label="FAB" ng-click="openCreateDialog($event)">+</md-button>
+  </div>
 </div>
