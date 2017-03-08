@@ -12,7 +12,8 @@
     $scope.client = {
       name: null,
       email: null,
-      phone: null
+      phone: null,
+      providers: null
     }
 
     $scope.providers = providers.map(function(provider){
@@ -33,6 +34,7 @@
       });
 
       ClientService.create(clientProspect).then(function(res){
+        $scope.client.providers = $scope.providers;
         $mdToast.show($mdToast.simple().textContent(res.message));
         $mdDialog.hide($scope.client);
       });
